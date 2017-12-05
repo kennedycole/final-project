@@ -10,18 +10,19 @@
 library(shiny)
 
 # Define UI for application that draws a histogram
-shinyUI(fluidPage(
-  
-  # Application title
-  titlePanel("Student Loan Data"),
-
-  sidebarLayout(
-    sidebarPanel(
-       
-    ),
-
-    mainPanel(
-       plotOutput("distPlot")
-    )
-  )
+shinyUI(navbarPage('Student Loans', # Create a tab panel for you map 
+                   tabPanel('Graph',# Create sidebar layout                            
+                            sidebarLayout(# Side panel for controls                               
+                              sidebarPanel(# Input to select variable to map                                 
+                                selectInput('dank', 'Loan', names(dataset), names(dataset)[[2]]), 
+                                selectInput('y', 'Recipient or Loan amount', names(dataset), names(dataset)[[1]])
+                              ),
+                              mainPanel(
+                                plotOutput('plot')   #plots the data in the main panel                           
+                                
+                              )
+                            )
+                   ),
+                   tabPanel('About')
 ))
+
