@@ -1,5 +1,5 @@
-setwd("/home/kennedy/Documents/UW/INFO\ 201/final-project")
-FSA.data <- read_excel("PortfolioSummary.xls")
+#setwd("/home/kennedy/Documents/UW/INFO\ 201/final-project")
+#FSA.data <- read_excel("PortfolioSummary.xls")
 
 getData <- function(file.xls) {
   FSA.data <- read_excel(file.xls)
