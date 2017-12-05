@@ -1,15 +1,20 @@
-#
-# This is the server logic of a Shiny web application. You can run the 
-# application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
+library(ggplot2)
 
-shinyServer(function(input, output) {
-
+function(input, output) {
+  loans <- getRatio("~/Downloads/PortfolioSummary.xls")
+  dataset <- reactive({loans})
+  output$plot <- renderPlot({
+    
+   renderedPlot <- ggplot(dataset(), aes_string(x = dataset()$Year, y = input$loan )) + geom_point() 
+    
+    print(renderedPlot) #prints the plot out
+    
+  }) 
   
-})
+  
+  output$table <- renderTable({
+    renderedTable <- loans
+    print(renderedTable)
+  })
+}
