@@ -1,5 +1,5 @@
 #setwd("/home/kennedy/Documents/UW/INFO\ 201/final-project")
-#FSA.data <- read_excel("PortfolioSummary.xls")
+#file.xls <- "PortfolioSummary.xls"
 
 # This function takes in the PortfolioSummary.xls file and outputs the data 
 # reorganized into a simple data frame
@@ -38,6 +38,7 @@ getData <- function(file.xls) {
   
   # Apply column names to reorganized subset of data
   finance.data$federal.fiscal.year[7:nrow(finance.data)] <- years.subset
+  finance.data[,1:8] <- sapply(finance.data[,1:8], as.numeric)
   
   return(finance.data)
 
