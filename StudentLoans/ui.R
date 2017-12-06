@@ -17,7 +17,7 @@ shinyUI(navbarPage('Student Loans', # Create a tab panel for you map
                             sidebarLayout(
                               sidebarPanel(
                                 selectInput('loan', "Loan Type", 
-                                            c("Direct", "Federal Family Education (FEEL)", "Perkins"))
+                                            c("Direct", "Federal Family Education (FFEL)", "Perkins"))
                               ),
                               mainPanel(
                                 plotlyOutput('amountChart'),
