@@ -43,7 +43,7 @@ graphLine <- function(loan, measure) {
     geom_point(aes(x = federal.fiscal.year, y = eval(as.name(loan.data))), color = line.color, size = 3) +
     geom_line(aes(x = federal.fiscal.year, y = eval(as.name(loan.data)), group = 1), color = line.color) +
     labs(title = paste(loan, "Loan", graph.title), x = "Federal Fiscal Year", y = paste("Average", measure)) +
-    theme(title = element_text(size = 15), axis.text = element_text(size = 8), axis.title = element_text(size = 10,face = "bold"))
+    theme(plot.title=element_text(family="Georgia"), plot.background = element_rect(fill = "transparent"),panel.background = element_rect(fill = "transparent"),title = element_text(size = 15), axis.text = element_text(size = 8), axis.title = element_text(size = 10,face = "bold"))
   
   return(line.chart)
 }

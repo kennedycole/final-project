@@ -5,8 +5,8 @@ account: mormonc
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 244389
-bundleId: 1115699
+bundleId: 1119027
 url: https://mormonc.shinyapps.io/StudentLoans/
-when: 1512448511.52939
+when: 1512576840.09889
 asMultiple: FALSE
 asStatic: FALSE

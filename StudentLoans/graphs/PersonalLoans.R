@@ -17,7 +17,7 @@ graphSingleLoan <- function() {
     geom_bar(stat = "identity", fill = "mediumpurple4") +
     geom_line(aes(group = 1)) +
     labs(title = "Total Average Loan Dollar Amount Per Recipient", x = "Federal Fiscal Year", y = "Loan Dollar Amount (per person)") +
-    theme(title = element_text(size = 15), axis.text = element_text(size = 8), axis.title = element_text(size = 10,face = "bold"))
+    theme(plot.title=element_text(family="Georgia"), plot.background = element_rect(fill = "transparent"),panel.background = element_rect(fill = "transparent"),title = element_text(size = 15), axis.text = element_text(size = 8), axis.title = element_text(size = 10,face = "bold"))
   
   return(bar.loans)
 }
