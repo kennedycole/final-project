@@ -11,35 +11,37 @@ library(shiny)
 library(shinydashboard)
 library(plotly)
 
-ui <- dashboardPage(
-  dashboardHeader(title = "Student Loan Data"),
-  dashboardSidebar(
-    sidebarMenu(
-      menuItem("Loan_Amounts_Recipients", tabName = "Loan_Amounts_Recipients"),
-      menuItem("second_app", tabName = "second_app")
-    )
-  ),
-  dashboardBody(
-    tabItems(
-      # Display interactive data for average loan amounts and recipients
-      tabItem(tabName = "Loan_Amounts_Recipients",
-              h2("Changes in Loan Recipients and Amounts from 2013 to 2017"),
-              sidebarLayout(
-                sidebarPanel(
-                  selectInput('loan', "Loan Type", 
-                              c("Direct", "Federal Family Education (FEEL)", "Perkins", "Total"))
-                ),
-                mainPanel(
-                  plotlyOutput('amountChart'),
-                  plotlyOutput('recipientChart')
-                )
-              )
-      ),
-      # Display interactive data for ...
-      tabItem(tabName = "second_app",
-              h2("Second App Content"))
-    )
-  )
-)
+# Define UI for application that draws a histogram
+shinyUI(navbarPage('Student Loans', # Create a tab panel for you map
+                   tabPanel('About'),
+                   
+                   tabPanel('Graph',# Create sidebar layout                            
+                            sidebarLayout(# Side panel for controls                               
+                              sidebarPanel(# Input to select variable to map                                 
+                                #selectInput('dank', 'Loan', names(dataset), names(dataset)[[2]]), 
+                                #selectInput('y', 'Recipient or Loan amount', names(dataset), names(dataset)[[1]])
+                              ),
+                              mainPanel(
+                                plotOutput('plot')   #plots the data in the main panel                           
+                                
+                              )
+                            )
+                   ),
+                   
+                   # Display interactive data for average loan amounts and recipients
+                   tabPanel('Amounts & Recipients',
+                            h2("Changes in Loan Recipients and Amounts from 2013 to 2017"),
+                            sidebarLayout(
+                              sidebarPanel(
+                                selectInput('loan', "Loan Type", 
+                                            c("Direct", "Federal Family Education (FEEL)", "Perkins", "Total"))
+                              ),
+                              mainPanel(
+                                plotlyOutput('amountChart'),
+                                br(),
+                                plotlyOutput('recipientChart')
+                              )
+                            ))
+                   
+))
 
-shinyUI(ui)

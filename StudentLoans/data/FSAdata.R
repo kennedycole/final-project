@@ -4,13 +4,13 @@
 # This function takes in the PortfolioSummary.xls file and outputs the data 
 # reorganized into a simple data frame
 getData <- function(file.xls) {
-  FSA.data <- read_excel(file.xls)
-  
   # read in neccesary libraries
   library(readxl)
   library(dplyr)
   library(stringr)
   library(tidyr)
+  
+  FSA.data <- read_excel(file.xls)
   
   # Creates list of the 4 types of loans
   loan.types <- unname(unlist(FSA.data[4,]))
