@@ -6,7 +6,8 @@ library(plotly)
 library(markdown)
 
 # Define UI for application that draws a histogram
-shinyUI(navbarPage('Student Loans', # Create a tab panel for you map
+shinyUI(navbarPage(theme="bootstrap.css",
+                   'Student Loans', # Create a tab panel for you map
                    tabPanel('About',
                             includeMarkdown("about.md")),
                    
