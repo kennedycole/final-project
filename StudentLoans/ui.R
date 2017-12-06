@@ -12,6 +12,7 @@ shinyUI(navbarPage('Student Loans', # Create a tab panel for you map
                    
                    # Display interactive data for average loan amounts and recipients
                    tabPanel('Loan Amounts & Recipients',
+                            includeMarkdown("YearlyLoans.md"),
                             h2("Changes in Loan Recipients and Amounts from 2013 to 2017"),
                             sidebarLayout(
                               sidebarPanel(
@@ -23,10 +24,12 @@ shinyUI(navbarPage('Student Loans', # Create a tab panel for you map
                                 br(),
                                 plotlyOutput('recipientChart')
                               )
+                            
                             )),
                    
                    # Display interactive bar chart for total average laon amounts and recipients
                    tabPanel('Total Averages',
+                            includeMarkdown("BarGraph.md"),
                             h2("Total Average Amounts of Outstanding Dollars and Recipients of Loans"),
                             sidebarLayout(
                               sidebarPanel(
@@ -38,7 +41,8 @@ shinyUI(navbarPage('Student Loans', # Create a tab panel for you map
                                 br(),
                                 br(),
                                 plotlyOutput('combinedBar')
-                              ) 
+                              )
+                             
                               ))
                    
 ))
