@@ -10,16 +10,16 @@ graphLine <- function(loan, measure) {
     group_by(federal.fiscal.year) %>% 
     summarise(quarters = n(), avg.direct.dollars = mean(`Direct.DollarsOutstanding(billions)`), 
               avg.direct.recipients = mean(`Direct.Recipients(millions)`),
-              avg.FEEL.dollars = mean(`FFEL.DollarsOutstanding(billions)`),
-              avg.FEEL.recipients = mean(`FFEL.Recipients(millions)`),
+              avg.FFEL.dollars = mean(`FFEL.DollarsOutstanding(billions)`),
+              avg.FFEL.recipients = mean(`FFEL.Recipients(millions)`),
               avg.perkins.dollars = mean(`Perkins.DollarsOutstanding(billions)`),
               avg.perkins.recipients = mean(`Perkins.Recipients(millions)`))
   
   # Rename loan for use in graphing functions
   var.loan <- tolower(loan)
   var.measure <- tolower(measure)
-  if (var.loan == "federal family education (feel)") {
-    var.loan <- "FEEL"
+  if (var.loan == "federal family education (ffel)") {
+    var.loan <- "FFEL"
   }
   
   # Rename outstanding dollar amounts for use in graphing functions
