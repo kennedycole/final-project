@@ -8,20 +8,38 @@
 #
 
 library(shiny)
+library(shinydashboard)
+library(plotly)
 
-# Define UI for application that draws a histogram
-shinyUI(fluidPage(
-  
-  # Application title
-  titlePanel("Student Loan Data"),
-
-  sidebarLayout(
-    sidebarPanel(
-       
-    ),
-
-    mainPanel(
-       plotOutput("distPlot")
+ui <- dashboardPage(
+  dashboardHeader(title = "Student Loan Data"),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Loan_Amounts_Recipients", tabName = "Loan_Amounts_Recipients"),
+      menuItem("second_app", tabName = "second_app")
+    )
+  ),
+  dashboardBody(
+    tabItems(
+      # Display interactive data for average loan amounts and recipients
+      tabItem(tabName = "Loan_Amounts_Recipients",
+              h2("Changes in Loan Recipients and Amounts from 2013 to 2017"),
+              sidebarLayout(
+                sidebarPanel(
+                  selectInput('loan', "Loan Type", 
+                              c("Direct", "Federal Family Education (FEEL)", "Perkins", "Total"))
+                ),
+                mainPanel(
+                  plotlyOutput('amountChart'),
+                  plotlyOutput('recipientChart')
+                )
+              )
+      ),
+      # Display interactive data for ...
+      tabItem(tabName = "second_app",
+              h2("Second App Content"))
     )
   )
-))
+)
+
+shinyUI(ui)
