@@ -7,13 +7,7 @@ graphBar <- function(measure) {
   # Calculate average loan data for each year and for every loan type
   FSAdata <- getData("data/PortfolioSummary.xls") %>% 
     group_by(federal.fiscal.year) %>% 
-    summarise(quarters = n(), avg.direct.dollars = mean(`Direct.DollarsOutstanding(billions)`), 
-              avg.direct.recipients = mean(`Direct.Recipients(millions)`),
-              avg.FEEL.dollars = mean(`FFEL.DollarsOutstanding(billions)`),
-              avg.FEEL.recipients = mean(`FFEL.Recipients(millions)`),
-              avg.perkins.dollars = mean(`Perkins.DollarsOutstanding(billions)`),
-              avg.perkins.recipients = mean(`Perkins.Recipients(millions)`),
-              avg.total.dollars = mean(`Total.DollarsOutstanding(billions)`),
+    summarise(quarters = n(), avg.total.dollars = mean(`Total.DollarsOutstanding(billions)`),
               avg.total.recipients = mean(`Total.UnduplicatedRecipients(millions)`))
   
 
