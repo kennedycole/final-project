@@ -13,6 +13,8 @@ library(plotly)
 
 shinyServer(function(input, output) {
   source("graphs/YearlyLoans.R")
+  source("graphs/BarGraph.R")
+  source("graphs/PersonalLoans.R")
   
   # Plot loan amount averages per year with line chart
   output$amountChart <- renderPlotly({
@@ -22,6 +24,14 @@ shinyServer(function(input, output) {
   # Plot average number of recipients for loans per year with line chart
   output$recipientChart <- renderPlotly({
     graphLine(as.character(input$loan), "Recipients (in millions)")
+  })
+  
+  output$totalBar <- renderPlotly({
+    graphBar(as.character(input$measure))
+  })
+  
+  output$combinedBar <- renderPlotly({
+    graphSingleLoan()
   })
   
 })

@@ -7,11 +7,11 @@ may​ qualify​ ​for​ ​or​ ​what​ ​type​ ​of​ loan​ ​t
 
 With our data, we hope to answer 3 main questions based solely on the total amount of loans distributed:
 
-1. How has debt increased for students from 2013 to the present?
+1. How has debt increased for students from 2007 to the present?
 
 2. In what year has the amount of debt per person been the highest?
 
-3. Which loan type makes up the most of the total amount of outstanding dollars?
+3. What is the average number of recipients and amount in dollars of loans from 2007 to 2017?
 
 
 As​ ​tuition​ fees​​ ​have​ been​ ​on​ ​the​ ​rise,​ ​ there​ ​has​ been​ a ​greater​ ​demand​ ​for​ ​loans.

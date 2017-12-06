@@ -1,0 +1,12 @@
+name: StudentLoans
+title: StudentLoans
+username:
+account: kennedyc
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 245024
+bundleId: 1118400
+url: https://kennedyc.shinyapps.io/StudentLoans/
+when: 1512548477.67769
+asMultiple: FALSE
+asStatic: FALSE
